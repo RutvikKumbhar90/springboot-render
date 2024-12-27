@@ -27,3 +27,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+# Or, if you want to ignore just mysql.sock or the entire directory:
+mysql_data/mysql.sock
+mysql_data/
