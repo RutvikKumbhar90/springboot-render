@@ -6,13 +6,13 @@ services:
     container_name: mysql_db_docker
     environment:
       MYSQL_DATABASE: springboot
-      MYSQL_ROOT_PASSWORD: root1234  # Empty password for root user
+      MYSQL_ROOT_PASSWORD: root1234
     ports:
       - "3307:3306"
     volumes:
       - ./mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "mysql"]  # Use container name 'mysql' here
+      test: ["CMD", "mysqladmin", "ping", "-h", "mysql"]
       interval: 10s
       retries: 5
       start_period: 30s
@@ -25,7 +25,7 @@ services:
       PMA_HOST: mysql
       PMA_PORT: 3306
       PMA_USER: root
-      PMA_PASSWORD: ""  # No password
+      PMA_PASSWORD: ""
     ports:
       - "8081:80"
     depends_on:
@@ -40,9 +40,7 @@ services:
       MYSQL_PORT: 3306
       MYSQL_DB: springboot
       MYSQL_USER: root
-      MYSQL_PASSWORD: ""  # Empty password for the Spring Boot app
-    volumes:
-      - C:/Users/rutvi/IdeaProjects/crud/crud:/app  # Correct Windows path handling for volume mount
+      MYSQL_PASSWORD: ""
     ports:
       - "8082:8080"
     depends_on:
