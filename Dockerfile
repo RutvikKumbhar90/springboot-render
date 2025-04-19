@@ -26,4 +26,4 @@ EXPOSE 8080
 # Set the entry point to run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "/opt/app.jar"]
 
-#A random commit
+
